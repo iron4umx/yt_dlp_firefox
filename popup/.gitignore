@@ -1,5 +1,14 @@
+# Ignore the node_modules directory
 node_modules
+
+# Ignore macOS .DS_Store files
 .DS_Store
+
+# Ignore the compiled/bundled output directory
 dist
+
+# Ignore server-side rendering output directory
 dist-ssr
+
+# Ignore files with the .local extension
 *.local
