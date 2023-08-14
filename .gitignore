@@ -1,1 +1,6 @@
+# -----------------------------------------
+# .gitignore Configuration for web-ext
+# -----------------------------------------
+
+# Ignore the 'web-ext-artifacts' directory where build artifacts are stored
 web-ext-artifacts/
