@@ -100,14 +100,17 @@ function sanitizePath(path) {
   // Normalize the path to remove any duplicate slashes and resolve any ".." segments
   const normalizedPath = path.replace(/\/+/g, '/').replace(/(^|\/)(?:\.\/)+/g, '$1');
 
+// Dynamically determine the allowed folder path based on extension installation
+const allowedFolder = browser.runtime.getURL("popup-dist/");
+
   // Ensure the path is within the allowed folder
-  const allowedFolder = "/path/to/allowed/folder"; // Update with your allowed folder
   if (!normalizedPath.startsWith(allowedFolder)) {
     throw new Error("Invalid file path");
   }
 
   return normalizedPath;
 }
+
 
 
 // Function to initiate the download process for a given URL
