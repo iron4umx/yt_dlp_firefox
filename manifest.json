@@ -8,7 +8,7 @@
   },
   "browser_specific_settings": {
     "gecko": {
-      "id": "yt_dlp_firefox@tyilo.com", // ID for Firefox
+      "id": "yt_dlp_firefox@iron4umx.com", // ID for Firefox
       "strict_min_version": "80.0"      // Minimum Firefox version required
     }
   },
