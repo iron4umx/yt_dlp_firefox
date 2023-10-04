@@ -16,6 +16,14 @@ setlocal
 :: Set working directory as the same as the batch file's directory
 cd /d "%~dp0"
 
+:: Check if yt-dlp is installed
+where yt-dlp > nul 2>&1
+if %errorlevel% equ 0 (
+    set "yt_dlp_installed=true"
+) else (
+    set "yt_dlp_installed=false"
+)
+
 :: Check if the helper is installed
 reg query "HKLM\SOFTWARE\Mozilla\NativeMessagingHosts\yt_dlp_firefox" > nul 2>&1
 if %errorlevel% equ 0 (
@@ -28,6 +36,11 @@ if %errorlevel% equ 0 (
 cls
 echo Welcome to the yt-dlp downloader for Firefox Setup Utility
 echo.
+if "%yt_dlp_installed%"=="true" (
+    echo yt-dlp is installed.
+) else (
+    echo yt-dlp is not installed.
+)
 if "%helper_installed%"=="true" (
     echo Choose an option:
     echo 1. Reinstall yt-dlp Firefox Helper
@@ -80,15 +93,19 @@ if %errorlevel% neq 0 (
     exit /b
 )
 
-:: Download yt-dlp.exe
-echo Downloading yt-dlp.exe...
-bitsadmin /transfer "yt_dlp_download" "https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe" "%install_dir%\yt-dlp.exe"
-
-:: Check if download was successful
-if %errorlevel% neq 0 (
-    echo Failed to download yt-dlp.exe. Exiting.
-    pause
-    exit /b
+:: Check if yt-dlp is installed, if not, download it
+if "%yt_dlp_installed%"=="false" (
+    :: Download yt-dlp.exe
+    echo Downloading yt-dlp.exe...
+    bitsadmin /transfer "yt_dlp_download" "https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe" "%install_dir%\yt-dlp.exe"
+    
+    :: Check if download was successful
+    if %errorlevel% neq 0 (
+        echo Failed to download yt-dlp.exe. Exiting.
+        pause
+        exit /b
+    )
+    set "yt_dlp_installed=true"
 )
 
 :: Copy other files to the installation directory
