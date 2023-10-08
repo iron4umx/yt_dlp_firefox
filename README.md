@@ -4,7 +4,7 @@ Enhance your Firefox browsing experience with the yt-dlp downloader extension. S
 
 ## Installation
 
-1. **Install the Extension**: Visit the [Firefox Add-ons page](https://addons.mozilla.org/en-US/firefox/addon/yt-dlp-downloader/) and install the yt-dlp downloader extension.
+1. **Install the Extension**: Visit the [Firefox Add-ons page](https://addons.mozilla.org/en-US/firefox/addon/yt-dlp-downloader-win-linux/) and install the yt-dlp downloader extension.
 
 2. **Helper Installation**:
 
