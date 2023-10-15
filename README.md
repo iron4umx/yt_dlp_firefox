@@ -9,6 +9,7 @@ Enhance your Firefox browsing experience with the yt-dlp downloader extension. S
 2. **Helper Installation**:
 
    **Linux**:
+   - Note: Currently the helper does not work on linux for some reason (the extension only works on windows at the time)
    - After installing the extension, clone this repository.
    - Run the command `make install` to install the required helper.
 
@@ -18,6 +19,11 @@ Enhance your Firefox browsing experience with the yt-dlp downloader extension. S
    - For detailed instructions on installing the Windows helper, refer to the [README.md](https://github.com/iron4umx/yt_dlp_firefox/blob/master/windows_helper_installer/README.md) file inside the `windows_helper_installer` folder.
 
 For additional information on the helper installation process, porting instructions, and other details, explore the [yt-dlp Firefox Helper for Windows Wiki](https://github.com/iron4umx/yt_dlp_firefox/wiki).
+
+## User Guide
+
+To download media right click on a media url (example: from inside the youtube webpage (but not limited) right click on a video) and click on the lower most option of the menu: Download with yt-dlp
+A pop-up will appear: yt-dlp Downloading: URL and when the media has downloaded it will appear a pop-up: yt-dlp Downloaded "name of file downloaded"
 
 ## Snap/flatpak permissions
 
